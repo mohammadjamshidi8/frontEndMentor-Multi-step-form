@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./src/output.css" />
+    <title>Frontend Mentor | Multi-step form</title>
+  </head>
+  <body>
+    <div class="w-full h-screen bg-lightGray flex justify-center items-center text-[16px] font-ubuntu">
+      <div class="bg-transparent w-full md:w-7/12 md:p-3 md:rounded-lg h-screen md:h-max bg-white flex flex-col md:flex-row items-end md:items-center md:justify-start md:gap-x-5">
+        <div
+          class="bg-[url('/assets/images/bg-sidebar-mobile.svg')] md:bg-[url('/assets/images/bg-sidebar-desktop.svg')] w-full md:w-[280px] h-[172px] md:h-[580px] flex flex-col justify-start bg-cover "
+        >
+          <div class="flex md:flex-col justify-around bg-rose-500 mt-12 mx-24">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+          </div>
+        </div>
+
+        <div
+          class="bg-transparent md:bg-green-300 w-8/12 h-screen md:h-[580px] mx-auto md:m-0 -mt-14 flex flex-col justify-between"
+        >
+          <div
+            class="bg-white md:bg-blue-300 w-11/12 md:w-full mx-auto p-4 rounded-lg flex flex-col gap-y-3"
+          >
+            <div class="flex flex-col">
+              <h2>Personal info</h2>
+              <span>
+                Please provide your name, email address, and phone number.
+              </span>
+            </div>
+
+            <form action="" class="flex flex-col gap-y-3">
+              <div class="flex flex-col gap-y-2">
+                <label for="name" class="text-marineBlue text-sm">Name</label>
+                <input type="text" id="name" placeholder="e.g. Stephen King" class="border-[1px] border-lightGray px-4 py-3 outline-none rounded-md">
+              </div>
+
+              <div class="flex flex-col gap-y-2">
+                <label class="text-marineBlue text-sm" for="email">Email Address</label>
+                <input type="email" id="email" placeholder="e.g. stephenking@lorem.com" class="border-[1px] border-lightGray px-4 py-3 outline-none rounded-md">
+              </div>
+
+              <div class="flex flex-col gap-y-2">
+                <label class="text-marineBlue text-sm" for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="e.g. +1 234 567 890" class="border-[1px] border-lightGray px-4 py-3 outline-none rounded-md">
+              </div>
+            </form>
+            
+          </div>
+
+          <div class="bg-white md:bg-transparent w-full h-20 flex justify-end items-center px-3">
+            <button class="bg-marineBlue px-6 py-3 text-white rounded-md font-medium">next step</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar start -->
+
+    <!-- bg-[url('./assets/images/bg-sidebar-desktop.svg')] -->
+    <!-- bg-[url('./assets/images/bg-sidebar-mobile.svg')] -->
+
+    <!-- Step 1
+  Your info
+
+  Step 2
+  Select plan
+
+  Step 3
+  Add-ons
+
+  Step 4
+  Summary -->
+
+    <!-- Sidebar end -->
+
+    <!-- Step 1 start -->
+
+    <!-- Personal info
+  Please provide your name, email address, and phone number.
+
+  Name
+  e.g. Stephen King
+
+  Email Address
+  e.g. stephenking@lorem.com
+
+  Phone Number
+  e.g. +1 234 567 890
+
+  Next Step -->
+
+    <!-- Step 1 end -->
+
+    <!-- Step 2 start -->
+
+    <!-- Select your plan
+  You have the option of monthly or yearly billing.
+
+  Arcade
+  $9/mo
+
+  Advanced
+  $12/mo
+
+  Pro
+  $15/mo
+
+  Monthly
+  Yearly
+
+  Go Back
+  Next Step -->
+
+    <!-- Step 2 end -->
+
+    <!-- Step 3 start -->
+    <!-- 
+  Pick add-ons
+  Add-ons help enhance your gaming experience.
+
+  Online service
+  Access to multiplayer games
+  +$1/mo
+
+  Larger storage
+  Extra 1TB of cloud save
+  +$2/mo
+
+  Customizable Profile
+  Custom theme on your profile
+  +$2/mo
+
+  Go Back
+  Next Step -->
+
+    <!-- Step 3 end -->
+
+    <!-- Step 4 start -->
+
+    <!-- Finishing up
+  Double-check everything looks OK before confirming. -->
+
+    <!-- Dynamically add subscription and add-on selections here -->
+    <!-- 
+  Total (per month/year)
+
+  Go Back
+  Confirm -->
+
+    <!-- Step 4 end -->
+
+    <!-- Step 5 start -->
+
+    <!-- Thank you!
+
+  Thanks for confirming your subscription! We hope you have fun 
+  using our platform. If you ever need support, please feel free 
+  to email us at support@loremgaming.com. -->
+
+    <!-- Step 5 end -->
+    <!--   
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  </body>
+</html>
