@@ -21,27 +21,54 @@
   </head>
   <body>
     <div class="w-full h-screen bg-lightGray flex justify-center items-center text-[16px] font-ubuntu">
-      <div class="bg-transparent w-full md:w-7/12 md:p-3 md:rounded-lg h-screen md:h-max bg-white flex flex-col md:flex-row items-end md:items-center md:justify-start md:gap-x-5">
+      <div class="bg-transparent w-full md:w-full lg:w-9/12 xl:w-1/2 md:p-3 md:rounded-lg h-screen md:h-max md:bg-white flex flex-col md:flex-row items-end md:items-center md:justify-start ">
         <div
-          class="bg-[url('/assets/images/bg-sidebar-mobile.svg')] md:bg-[url('/assets/images/bg-sidebar-desktop.svg')] w-full md:w-[280px] h-[172px] md:h-[580px] flex flex-col justify-start bg-cover "
+          class="bg-[url('/assets/images/bg-sidebar-mobile.svg')] md:bg-[url('/assets/images/bg-sidebar-desktop.svg')] w-full md:w-1/3 h-1/3 md:h-[580px] flex flex-col justify-start bg-cover bg-center md:rounded-lg"
         >
-          <div class="flex md:flex-col justify-around bg-rose-500 mt-12 mx-24">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
+          <div class="flex md:flex-col md:w-full gap-y-5 justify-around md:items-center mt-12 mx-20 md:mx-0">
+            <div class="flex text-white items-center gap-x-3">
+              <button class="w-8 h-8 rounded-full border-[1px] border-white active">1</button>
+              <div class="hidden md:flex flex-col">
+                <span class="text-lightGray font-medium">Step 1</span>
+                <h4 class="font-bold">Your info</h4>
+              </div>
+            </div>
+
+            <div class="flex text-white items-center gap-x-3">
+              <button class="w-8 h-8 rounded-full border-[1px] border-white">2</button>
+              <div class="hidden md:flex flex-col">
+                <span class="text-lightGray font-medium">Step 2</span>
+                <h4 class="font-bold">Select plan</h4>
+              </div>
+            </div>
+
+            <div class="flex text-white items-center gap-x-3">
+              <button class="w-8 h-8 rounded-full border-[1px] border-white">3</button>
+              <div class="hidden md:flex flex-col">
+                <span class="text-lightGray font-medium">Step 3</span>
+                <h4 class="font-bold">Add-ons</h4>
+              </div>
+            </div>
+
+            <div class="flex text-white items-center gap-x-3">
+              <button class="w-8 h-8 rounded-full border-[1px] border-white">4</button>
+              <div class="hidden md:flex flex-col">
+                <span class="text-lightGray font-medium">Step 4</span>
+                <h4 class="font-bold">Summary</h4>
+              </div>
+            </div>
           </div>
         </div>
 
         <div
-          class="bg-transparent md:bg-green-300 w-8/12 h-screen md:h-[580px] mx-auto md:m-0 -mt-14 flex flex-col justify-between"
+          class="bg-transparent md:w-2/3 h-screen md:h-[580px] mx-auto md:m-0 -mt-14 flex flex-col justify-between md:items-center"
         >
           <div
-            class="bg-white md:bg-blue-300 w-11/12 md:w-full mx-auto p-4 rounded-lg flex flex-col gap-y-3"
+            class="bg-white w-11/12 md:w-10/12 mx-auto p-4 rounded-lg flex flex-col gap-y-3"
           >
-            <div class="flex flex-col">
-              <h2>Personal info</h2>
-              <span>
+            <div class="flex flex-col mt-8 gap-y-3">
+              <h2 class="font-bold text-marineBlue text-4xl">Personal info</h2>
+              <span class="text-coolGray ">
                 Please provide your name, email address, and phone number.
               </span>
             </div>

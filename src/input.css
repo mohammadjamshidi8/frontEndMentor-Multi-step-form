@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    .active {
+        @apply bg-lightBlue border-none text-black
+    }
+}
