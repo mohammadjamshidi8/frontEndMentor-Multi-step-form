@@ -20,14 +20,28 @@
     <title>Frontend Mentor | Multi-step form</title>
   </head>
   <body>
-    <div class="w-full h-screen bg-lightGray flex justify-center items-center text-[16px] font-ubuntu">
-      <div class="bg-transparent w-full md:w-full lg:w-9/12 xl:w-1/2 md:p-3 md:rounded-lg h-screen md:h-max md:bg-white flex flex-col md:flex-row items-end md:items-center md:justify-start ">
+    <!-- container start -->
+    <div
+      class="w-full h-screen bg-lightGray flex justify-center items-center text-[16px] font-ubuntu"
+    >
+      <!-- form container start -->
+      <div
+        class="bg-transparent w-full md:w-full lg:w-9/12 xl:w-1/2 md:p-3 md:rounded-lg h-screen md:h-max md:bg-white flex flex-col md:flex-row items-end md:items-center md:justify-start"
+      >
+        <!-- left sidebar (image and number buttons) start -->
+
         <div
           class="bg-[url('/assets/images/bg-sidebar-mobile.svg')] md:bg-[url('/assets/images/bg-sidebar-desktop.svg')] w-full md:w-1/3 h-1/3 md:h-[580px] flex flex-col justify-start bg-cover bg-center md:rounded-lg"
         >
-          <div class="flex md:flex-col md:w-full gap-y-5 justify-around md:items-center mt-12 mx-20 md:mx-0">
+          <div
+            class="flex md:flex-col md:w-full gap-y-5 justify-around md:items-center mt-12 mx-20 md:mx-0"
+          >
             <div class="flex text-white items-center gap-x-3">
-              <button class="w-8 h-8 rounded-full border-[1px] border-white active">1</button>
+              <button
+                class="w-8 h-8 rounded-full border-[1px] border-white active"
+              >
+                1
+              </button>
               <div class="hidden md:flex flex-col">
                 <span class="text-lightGray font-medium">Step 1</span>
                 <h4 class="font-bold">Your info</h4>
@@ -35,7 +49,9 @@
             </div>
 
             <div class="flex text-white items-center gap-x-3">
-              <button class="w-8 h-8 rounded-full border-[1px] border-white">2</button>
+              <button class="w-8 h-8 rounded-full border-[1px] border-white">
+                2
+              </button>
               <div class="hidden md:flex flex-col">
                 <span class="text-lightGray font-medium">Step 2</span>
                 <h4 class="font-bold">Select plan</h4>
@@ -43,7 +59,9 @@
             </div>
 
             <div class="flex text-white items-center gap-x-3">
-              <button class="w-8 h-8 rounded-full border-[1px] border-white">3</button>
+              <button class="w-8 h-8 rounded-full border-[1px] border-white">
+                3
+              </button>
               <div class="hidden md:flex flex-col">
                 <span class="text-lightGray font-medium">Step 3</span>
                 <h4 class="font-bold">Add-ons</h4>
@@ -51,7 +69,9 @@
             </div>
 
             <div class="flex text-white items-center gap-x-3">
-              <button class="w-8 h-8 rounded-full border-[1px] border-white">4</button>
+              <button class="w-8 h-8 rounded-full border-[1px] border-white">
+                4
+              </button>
               <div class="hidden md:flex flex-col">
                 <span class="text-lightGray font-medium">Step 4</span>
                 <h4 class="font-bold">Summary</h4>
@@ -60,15 +80,19 @@
           </div>
         </div>
 
+        <!-- left sidebar (image and number buttons) ends -->
+
+        <!-- right content container start (forms) -->
         <div
-          class="bg-transparent md:w-2/3 h-screen md:h-[580px] mx-auto md:m-0 -mt-14 flex flex-col justify-between md:items-center"
+          class="bg-transparent md:w-2/3 h-screen md:h-[580px] mx-auto md:m-0 -mt-32 flex flex-col justify-between md:items-center"
         >
+          <!-- step-1 start -->
           <div
-            class="bg-white w-11/12 md:w-10/12 mx-auto p-4 rounded-lg flex flex-col gap-y-3"
+            class="bg-white w-11/12 md:w-10/12 mx-auto p-4 rounded-lg flex flex-col gap-y-3 hidden"
           >
             <div class="flex flex-col mt-8 gap-y-3">
               <h2 class="font-bold text-marineBlue text-4xl">Personal info</h2>
-              <span class="text-coolGray ">
+              <span class="text-coolGray">
                 Please provide your name, email address, and phone number.
               </span>
             </div>
@@ -76,28 +100,244 @@
             <form action="" class="flex flex-col gap-y-3">
               <div class="flex flex-col gap-y-2">
                 <label for="name" class="text-marineBlue text-sm">Name</label>
-                <input type="text" id="name" placeholder="e.g. Stephen King" class="border-[1px] border-lightGray px-4 py-3 outline-none rounded-md">
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="e.g. Stephen King"
+                  class="border-[1px] border-lightGray px-4 py-3 outline-none rounded-md"
+                />
               </div>
 
               <div class="flex flex-col gap-y-2">
-                <label class="text-marineBlue text-sm" for="email">Email Address</label>
-                <input type="email" id="email" placeholder="e.g. stephenking@lorem.com" class="border-[1px] border-lightGray px-4 py-3 outline-none rounded-md">
+                <label class="text-marineBlue text-sm" for="email"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="e.g. stephenking@lorem.com"
+                  class="border-[1px] border-lightGray px-4 py-3 outline-none rounded-md"
+                />
               </div>
 
               <div class="flex flex-col gap-y-2">
-                <label class="text-marineBlue text-sm" for="phone">Phone Number</label>
-                <input type="tel" id="phone" placeholder="e.g. +1 234 567 890" class="border-[1px] border-lightGray px-4 py-3 outline-none rounded-md">
+                <label class="text-marineBlue text-sm" for="phone"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  placeholder="e.g. +1 234 567 890"
+                  class="border-[1px] border-lightGray px-4 py-3 outline-none rounded-md"
+                />
               </div>
             </form>
-            
+          </div>
+          <!-- step-1 ends -->
+
+          <!-- step-2 start -->
+
+          <div
+            class="bg-white w-11/12 md:w-10/12 mx-auto p-4 rounded-lg flex flex-col gap-y-3 hidden"
+          >
+            <div class="flex flex-col mt-8 gap-y-3">
+              <h2 class="font-bold text-marineBlue text-4xl">
+                Select your plan
+              </h2>
+              <span class="text-coolGray">
+                You have the option of monthly or yearly billing.
+              </span>
+            </div>
+
+            <div
+              id="radio-ttile-group"
+              class="w-11/12 md:w-full mx-auto h-max flex flex-col md:flex-row justify-evenly gap-x-3 gap-y-1"
+            >
+              <div
+                id="input-container"
+                class="relative md:w-1/3 w-full md:h-[170px] h-24 py-3 rounded-md"
+              >
+                <input
+                  class="absolute h-full w-full top-0 right-0 cursor-pointer z-10 checked:opacity-20 peer appearance-none"
+                  type="radio"
+                  name="radio-plan"
+                  id="arcane"
+                />
+                <div
+                  id="radio-title"
+                  class="absolute top-0 right-0 rounded-md border-[1px] border-lightGray py-2 w-full h-full flex md:flex-col md:items-start items-center md:justify-between transition-all duration-150 ease-linear px-4 peer-checked:bg-purple-50 peer-checked:border-purplishBlue gap-x-4"
+                >
+                  <label
+                    id="label-1"
+                    for="arcane"
+                    class="uppercase tracking-wide"
+                  >
+                    <img src="./assets/images/icon-arcade.svg" alt="" />
+                  </label>
+                  <div class="flex flex-col items-start">
+                    <h2 class="text-lg font-bold text-marineBlue">Arcade</h2>
+                    <span id="arcade-price" class="text-coolGray">$9/mo</span>
+                    <span id="free-offer" class="text-sm text-marineBlue hidden"
+                      >2 month free</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div
+                id="input-container"
+                class="relative md:w-1/3 w-full md:h-[170px] h-24 py-3 rounded-md"
+              >
+                <input
+                  class="absolute h-full w-full top-0 right-0 cursor-pointer z-10 checked:opacity-20 peer appearance-none"
+                  type="radio"
+                  name="radio-plan"
+                  id="advanded"
+                />
+                <div
+                  id="radio-title"
+                  class="absolute top-0 right-0 rounded-md border-[1px] border-lightGray py-2 w-full h-full flex md:flex-col md:items-start items-center md:justify-between transition-all duration-150 ease-linear px-4 peer-checked:bg-purple-50 peer-checked:border-purplishBlue gap-x-4"
+                >
+                  <label
+                    id="label-1"
+                    for="advanded"
+                    class="uppercase tracking-wide"
+                  >
+                    <img src="./assets/images/icon-advanced.svg" alt="" />
+                  </label>
+                  <div class="flex flex-col items-start">
+                    <h2 class="text-lg font-bold text-marineBlue">Advanced</h2>
+                    <span id="advanced-price" class="text-coolGray"
+                      >$12/mo</span
+                    >
+                    <span id="free-offer" class="text-sm text-marineBlue hidden"
+                      >2 month free</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div
+                id="input-container"
+                class="relative md:w-1/3 w-full md:h-[170px] h-24 py-3 rounded-md"
+              >
+                <input
+                  class="absolute h-full w-full top-0 right-0 cursor-pointer z-10 checked:opacity-20 peer appearance-none"
+                  type="radio"
+                  name="radio-plan"
+                  id="pro"
+                />
+                <div
+                  id="radio-title"
+                  class="absolute top-0 right-0 rounded-md border-[1px] border-lightGray py-2 w-full h-full flex md:flex-col md:items-start items-center md:justify-between transition-all duration-150 ease-linear px-4 peer-checked:bg-purple-50 peer-checked:border-purplishBlue gap-x-4"
+                >
+                  <label id="label-1" for="pro" class="uppercase tracking-wide">
+                    <img src="./assets/images/icon-pro.svg" alt="" />
+                  </label>
+                  <div class="flex flex-col items-start">
+                    <h2 class="text-lg font-bold text-marineBlue">Pro</h2>
+                    <span id="pro-price" class="text-coolGray">$15/mo</span>
+                    <span id="free-offer" class="text-sm text-marineBlue hidden"
+                      >2 month free</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-center items-center py-2 gap-x-4">
+              <span id="monthly" class="font-medium text-coolGray"
+                >Monthly</span
+              >
+              <div
+                class="w-16 h-8 relative rounded-full cursor-pointer bg-green-200"
+              >
+                <input
+                  type="checkbox"
+                  id="toggle"
+                  class="appearance-none peer w-full bg-marineBlue h-full rounded-full"
+                  checked
+                />
+                <label
+                  for="toggle"
+                  class="absolute top-1/2 -translate-y-1/2 transition duration-700 ease-in-out right-1 w-5 h-5 rounded-full bg-white peer-checked:left-1 cursor-pointer"
+                ></label>
+              </div>
+              <span id="yearly" class="font-medium text-coolGray">Yearly</span>
+            </div>
           </div>
 
-          <div class="bg-white md:bg-transparent w-full h-20 flex justify-end items-center px-3">
-            <button class="bg-marineBlue px-6 py-3 text-white rounded-md font-medium">next step</button>
+          <!-- step-2 ends -->
+
+          <!-- step-3 start -->
+
+          <div
+            class="bg-white w-11/12 md:w-10/12 mx-auto p-4 rounded-lg flex flex-col gap-y-3"
+          >
+            <div class="flex flex-col mt-8 gap-y-3">
+              <h2 class="font-bold text-marineBlue text-4xl">Pick add-ons</h2>
+              <span class="text-coolGray">
+                Add-ons help enhance your gaming experience.
+              </span>
+            </div>
+
+            <div class="w-full lg:w-11/12 flex flex-col gap-y-2">
+              <div class="flex items-center px-3 justify-between py-2 lg:py-3 border-[1px] border-coolGray rounded-md relative z-20 bg-transparent">
+                <input type="checkbox" id="add-ons-1" class="peer">
+                <label for="add-ons-1" class="absolute w-full h-full top-0 right-0 rounded-md peer-checked:bg-purple-50 border-[1px] peer-checked:border-purplishBlue -z-10"></label>
+                <div class="flex flex-col gap-y-1">
+                  <h3 class="text-sm  lg:text-lg text-marineBlue font-bold">Online service</h3>
+                  <span class="text-xs lg:text-base text-coolGray">Access to multiplayer games</span>
+                </div>
+                <span class="text-sm lg:text-base text-purplishBlue">+$1/mo</span>
+              </div>
+
+              <div class="flex items-center px-3 justify-between py-2 lg:py-3 border-[1px] border-coolGray rounded-md relative z-20 bg-transparent">
+                <input type="checkbox" id="add-ons-2" class="peer">
+                <label for="add-ons-2" class="absolute w-full h-full top-0 right-0 rounded-md peer-checked:bg-purple-50 border-[1px] peer-checked:border-purplishBlue -z-10"></label>
+                <div class="flex flex-col gap-y-1">
+                  <h3 class="text-sm lg:text-lg text-marineBlue font-bold">Larger storage</h3>
+                  <span class="text-xs lg:text-base text-coolGray">Extra 1TB of cloud save</span>
+                </div>
+                <span class="text-sm lg:text-base text-purplishBlue">+$2/mo</span>
+              </div>
+
+              <div class="flex items-center px-3 justify-between py-2 lg:py-3 border-[1px] border-coolGray rounded-md relative z-20 bg-transparent">
+                <input type="checkbox" id="add-ons-3" class="peer">
+                <label for="add-ons-3" class="absolute w-full h-full top-0 right-0 rounded-md peer-checked:bg-purple-50 border-[1px] peer-checked:border-purplishBlue -z-10"></label>
+                <div class="flex flex-col justify-start gap-y-1">
+                  <h3 class="text-sm lg:text-lg text-marineBlue font-bold">Customizable Profile</h3>
+                  <span class="text-xs lg:text-base text-coolGray">Custom theme on your profile</span>
+                </div>
+                <span class="text-sm lg:text-base text-purplishBlue">+$2/mo</span>
+              </div>
+
+            </div>
           </div>
+
+          <!-- step-3 ends -->
+
+          <!-- next and previous buttons starts -->
+          <div
+            class="bg-white md:bg-transparent w-full h-20 flex flex-row-reverse justify-between items-center px-3"
+          >
+            <button
+              class="bg-marineBlue px-6 py-3 text-white rounded-md font-medium"
+            >
+              next step
+            </button>
+            <button class="px-6 py-3 text-coolGray rounded-md font-medium">
+              Go Back
+            </button>
+          </div>
+          <!-- next and previous buttons ends -->
         </div>
+        <!-- right content container ends (forms) -->
       </div>
+      <!-- form container start -->
     </div>
+    <!-- container ends -->
+
     <!-- Sidebar start -->
 
     <!-- bg-[url('./assets/images/bg-sidebar-desktop.svg')] -->
@@ -207,5 +447,6 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
+    <script src="./Js/app.js"></script>
   </body>
 </html>
