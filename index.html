@@ -34,10 +34,10 @@
           class="bg-[url('/assets/images/bg-sidebar-mobile.svg')] md:bg-[url('/assets/images/bg-sidebar-desktop.svg')] w-full md:w-1/3 h-1/3 md:h-[580px] flex flex-col justify-start bg-cover bg-center md:rounded-lg"
         >
           <div
-            class="flex md:flex-col md:w-full gap-y-5 justify-around md:items-center mt-12 mx-20 md:mx-0"
+            class="flex md:flex-col md:w-full gap-y-5 justify-around md:items-start md:pl-10 mt-12 mx-20 md:mx-0"
           >
             <div class="flex text-white items-center gap-x-3">
-              <button
+              <button id="step-buttons"
                 class="w-8 h-8 rounded-full border-[1px] border-white active"
               >
                 1
@@ -49,7 +49,7 @@
             </div>
 
             <div class="flex text-white items-center gap-x-3">
-              <button class="w-8 h-8 rounded-full border-[1px] border-white">
+              <button id="step-buttons" class="w-8 h-8 rounded-full border-[1px] border-white">
                 2
               </button>
               <div class="hidden md:flex flex-col">
@@ -59,7 +59,7 @@
             </div>
 
             <div class="flex text-white items-center gap-x-3">
-              <button class="w-8 h-8 rounded-full border-[1px] border-white">
+              <button id="step-buttons" class="w-8 h-8 rounded-full border-[1px] border-white">
                 3
               </button>
               <div class="hidden md:flex flex-col">
@@ -69,7 +69,7 @@
             </div>
 
             <div class="flex text-white items-center gap-x-3">
-              <button class="w-8 h-8 rounded-full border-[1px] border-white">
+              <button id="step-buttons" class="w-8 h-8 rounded-full border-[1px] border-white">
                 4
               </button>
               <div class="hidden md:flex flex-col">
@@ -88,7 +88,8 @@
         >
           <!-- step-1 start -->
           <div
-            class="bg-white w-11/12 md:w-10/12 mx-auto p-4 rounded-lg flex flex-col gap-y-3 hidden"
+            id="forms"
+            class="bg-white w-11/12 md:w-10/12 mx-auto p-4 rounded-lg flex flex-col gap-y-3"
           >
             <div class="flex flex-col mt-8 gap-y-3">
               <h2 class="font-bold text-marineBlue text-4xl">Personal info</h2>
@@ -97,38 +98,66 @@
               </span>
             </div>
 
-            <form action="" class="flex flex-col gap-y-3">
+            <form action="" id="step-one-form" class="flex flex-col gap-y-3">
               <div class="flex flex-col gap-y-2">
-                <label for="name" class="text-marineBlue text-sm">Name</label>
+                <label for="name" class="text-marineBlue text-sm">
+                  <div class="flex justify-between">
+                    <span class="text-marineBlue text-sm">Name</span>
+                    <span
+                      id="name-error"
+                      class="text-right text-sm text-strawberry font-medium hidden"
+                      >This field is requierd!</span
+                    >
+                  </div>
+                </label>
                 <input
                   type="text"
                   id="name"
                   placeholder="e.g. Stephen King"
-                  class="border-[1px] border-lightGray px-4 py-3 outline-none rounded-md"
+                  class="border-[1px] border-lightGray px-4 py-3 outline-none rounded-md focus:border-purplishBlue focus:transition focus:duration-300"
                 />
               </div>
 
               <div class="flex flex-col gap-y-2">
+
                 <label class="text-marineBlue text-sm" for="email"
-                  >Email Address</label
+                  >
+                  <div class="flex justify-between">
+                    <span>Email Address</span>
+                    <span
+                    id="email-error"
+                    class="text-right text-sm text-strawberry font-medium hidden"
+                    >This field is requierd!</span
+                  >
+                  </div>
+                  </label
                 >
                 <input
                   type="email"
                   id="email"
                   placeholder="e.g. stephenking@lorem.com"
-                  class="border-[1px] border-lightGray px-4 py-3 outline-none rounded-md"
+                  class="border-[1px] border-lightGray px-4 py-3 outline-none rounded-md focus:border-purplishBlue focus:transition focus:duration-300"
                 />
               </div>
 
               <div class="flex flex-col gap-y-2">
-                <label class="text-marineBlue text-sm" for="phone"
-                  >Phone Number</label
+                
+                
+                <label class="text-marineBlue text-sm" for="phone">
+                  <div class="flex justify-between">
+                    <span>Phone Number</span>
+                    <span
+                  id="phone-error"
+                  class="text-right text-sm text-strawberry font-medium hidden"
+                  >This field is requierd!</span>
+                  </div>
+                  </label
                 >
                 <input
                   type="tel"
                   id="phone"
                   placeholder="e.g. +1 234 567 890"
-                  class="border-[1px] border-lightGray px-4 py-3 outline-none rounded-md"
+                  class="border-[1px] border-lightGray px-4 py-3 outline-none rounded-md focus:border-purplishBlue focus:transition focus:duration-300"
                 />
               </div>
             </form>
@@ -138,6 +167,7 @@
           <!-- step-2 start -->
 
           <div
+          id="forms"
             class="bg-white w-11/12 md:w-10/12 mx-auto p-4 rounded-lg flex flex-col gap-y-3 hidden"
           >
             <div class="flex flex-col mt-8 gap-y-3">
@@ -271,8 +301,8 @@
 
           <!-- step-3 start -->
 
-          <div
-            class="bg-white w-11/12 md:w-10/12 mx-auto p-4 rounded-lg flex flex-col gap-y-3"
+          <div id="forms"
+            class="bg-white w-11/12 md:w-10/12 mx-auto p-4 rounded-lg flex flex-col gap-y-3 hidden"
           >
             <div class="flex flex-col mt-8 gap-y-3">
               <h2 class="font-bold text-marineBlue text-4xl">Pick add-ons</h2>
@@ -282,36 +312,74 @@
             </div>
 
             <div class="w-full lg:w-11/12 flex flex-col gap-y-2">
-              <div class="flex items-center px-3 justify-between py-2 lg:py-3 border-[1px] border-coolGray rounded-md relative z-20 bg-transparent">
-                <input type="checkbox" id="add-ons-1" class="peer">
-                <label for="add-ons-1" class="absolute w-full h-full top-0 right-0 rounded-md peer-checked:bg-purple-50 border-[1px] peer-checked:border-purplishBlue -z-10"></label>
+              <div
+                class="flex items-center px-3 justify-between py-2 lg:py-3 border-[1px] border-coolGray rounded-md relative z-20 bg-transparent"
+              >
+                <input type="checkbox" id="add-ons-1" class="peer" />
+                <label
+                  for="add-ons-1"
+                  class="absolute w-full h-full top-0 right-0 rounded-md peer-checked:bg-purple-50 border-[1px] peer-checked:border-purplishBlue -z-10"
+                ></label>
                 <div class="flex flex-col gap-y-1">
-                  <h3 class="text-sm  lg:text-lg text-marineBlue font-bold">Online service</h3>
-                  <span class="text-xs lg:text-base text-coolGray">Access to multiplayer games</span>
+                  <h3 class="text-sm lg:text-lg text-marineBlue font-bold">
+                    Online service
+                  </h3>
+                  <span class="text-xs lg:text-base text-coolGray"
+                    >Access to multiplayer games</span
+                  >
                 </div>
-                <span class="text-sm lg:text-base text-purplishBlue">+$1/mo</span>
+                <span
+                  id="online-add"
+                  class="text-sm lg:text-base text-purplishBlue"
+                  >+$1/mo</span
+                >
               </div>
 
-              <div class="flex items-center px-3 justify-between py-2 lg:py-3 border-[1px] border-coolGray rounded-md relative z-20 bg-transparent">
-                <input type="checkbox" id="add-ons-2" class="peer">
-                <label for="add-ons-2" class="absolute w-full h-full top-0 right-0 rounded-md peer-checked:bg-purple-50 border-[1px] peer-checked:border-purplishBlue -z-10"></label>
+              <div
+                class="flex items-center px-3 justify-between py-2 lg:py-3 border-[1px] border-coolGray rounded-md relative z-20 bg-transparent"
+              >
+                <input type="checkbox" id="add-ons-2" class="peer" />
+                <label
+                  for="add-ons-2"
+                  class="absolute w-full h-full top-0 right-0 rounded-md peer-checked:bg-purple-50 border-[1px] peer-checked:border-purplishBlue -z-10"
+                ></label>
                 <div class="flex flex-col gap-y-1">
-                  <h3 class="text-sm lg:text-lg text-marineBlue font-bold">Larger storage</h3>
-                  <span class="text-xs lg:text-base text-coolGray">Extra 1TB of cloud save</span>
+                  <h3 class="text-sm lg:text-lg text-marineBlue font-bold">
+                    Larger storage
+                  </h3>
+                  <span class="text-xs lg:text-base text-coolGray"
+                    >Extra 1TB of cloud save</span
+                  >
                 </div>
-                <span class="text-sm lg:text-base text-purplishBlue">+$2/mo</span>
+                <span
+                  id="storage-add"
+                  class="text-sm lg:text-base text-purplishBlue"
+                  >+$2/mo</span
+                >
               </div>
 
-              <div class="flex items-center px-3 justify-between py-2 lg:py-3 border-[1px] border-coolGray rounded-md relative z-20 bg-transparent">
-                <input type="checkbox" id="add-ons-3" class="peer">
-                <label for="add-ons-3" class="absolute w-full h-full top-0 right-0 rounded-md peer-checked:bg-purple-50 border-[1px] peer-checked:border-purplishBlue -z-10"></label>
+              <div
+                class="flex items-center px-3 justify-between py-2 lg:py-3 border-[1px] border-coolGray rounded-md relative z-20 bg-transparent"
+              >
+                <input type="checkbox" id="add-ons-3" class="peer" />
+                <label
+                  for="add-ons-3"
+                  class="absolute w-full h-full top-0 right-0 rounded-md peer-checked:bg-purple-50 border-[1px] peer-checked:border-purplishBlue -z-10"
+                ></label>
                 <div class="flex flex-col justify-start gap-y-1">
-                  <h3 class="text-sm lg:text-lg text-marineBlue font-bold">Customizable Profile</h3>
-                  <span class="text-xs lg:text-base text-coolGray">Custom theme on your profile</span>
+                  <h3 class="text-sm lg:text-lg text-marineBlue font-bold">
+                    Customizable Profile
+                  </h3>
+                  <span class="text-xs lg:text-base text-coolGray"
+                    >Custom theme on your profile</span
+                  >
                 </div>
-                <span class="text-sm lg:text-base text-purplishBlue">+$2/mo</span>
+                <span
+                  id="custom-add"
+                  class="text-sm lg:text-base text-purplishBlue"
+                  >+$2/mo</span
+                >
               </div>
-
             </div>
           </div>
 
@@ -321,12 +389,15 @@
           <div
             class="bg-white md:bg-transparent w-full h-20 flex flex-row-reverse justify-between items-center px-3"
           >
-            <button
+            <button id="next-button"
               class="bg-marineBlue px-6 py-3 text-white rounded-md font-medium"
             >
               next step
             </button>
-            <button class="px-6 py-3 text-coolGray rounded-md font-medium">
+            <button
+              id="back-button"
+              class="px-6 py-3 text-coolGray rounded-md font-medium"
+            >
               Go Back
             </button>
           </div>
