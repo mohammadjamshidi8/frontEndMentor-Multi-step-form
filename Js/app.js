@@ -149,3 +149,19 @@ toggleBtn.addEventListener('click', (e) => {
         })
     }
 })
+
+
+
+
+let inputs = arrayForm[1].querySelectorAll('input.radio')
+console.log(inputs);
+let arrayInputs = Array.from(inputs)
+
+let test = null
+
+arrayInputs.forEach(input => {
+    input.addEventListener('input', (e) => {
+        test = e.target.parentElement.querySelector('span')
+        console.log(test.innerHTML);
+    })
+})

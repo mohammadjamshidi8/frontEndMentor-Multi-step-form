@@ -37,7 +37,8 @@
             class="flex md:flex-col md:w-full gap-y-5 justify-around md:items-start md:pl-10 mt-12 mx-20 md:mx-0"
           >
             <div class="flex text-white items-center gap-x-3">
-              <button id="step-buttons"
+              <button
+                id="step-buttons"
                 class="w-8 h-8 rounded-full border-[1px] border-white active"
               >
                 1
@@ -49,7 +50,10 @@
             </div>
 
             <div class="flex text-white items-center gap-x-3">
-              <button id="step-buttons" class="w-8 h-8 rounded-full border-[1px] border-white">
+              <button
+                id="step-buttons"
+                class="w-8 h-8 rounded-full border-[1px] border-white"
+              >
                 2
               </button>
               <div class="hidden md:flex flex-col">
@@ -59,7 +63,10 @@
             </div>
 
             <div class="flex text-white items-center gap-x-3">
-              <button id="step-buttons" class="w-8 h-8 rounded-full border-[1px] border-white">
+              <button
+                id="step-buttons"
+                class="w-8 h-8 rounded-full border-[1px] border-white"
+              >
                 3
               </button>
               <div class="hidden md:flex flex-col">
@@ -69,7 +76,10 @@
             </div>
 
             <div class="flex text-white items-center gap-x-3">
-              <button id="step-buttons" class="w-8 h-8 rounded-full border-[1px] border-white">
+              <button
+                id="step-buttons"
+                class="w-8 h-8 rounded-full border-[1px] border-white"
+              >
                 4
               </button>
               <div class="hidden md:flex flex-col">
@@ -89,7 +99,7 @@
           <!-- step-1 start -->
           <div
             id="forms"
-            class="bg-white w-11/12 md:w-10/12 mx-auto p-4 rounded-lg flex flex-col gap-y-3"
+            class="bg-white w-11/12 md:w-10/12 mx-auto p-4 rounded-lg flex flex-col gap-y-3 hidden"
           >
             <div class="flex flex-col mt-8 gap-y-3">
               <h2 class="font-bold text-marineBlue text-4xl">Personal info</h2>
@@ -119,19 +129,16 @@
               </div>
 
               <div class="flex flex-col gap-y-2">
-
-                <label class="text-marineBlue text-sm" for="email"
-                  >
+                <label class="text-marineBlue text-sm" for="email">
                   <div class="flex justify-between">
                     <span>Email Address</span>
                     <span
-                    id="email-error"
-                    class="text-right text-sm text-strawberry font-medium hidden"
-                    >This field is requierd!</span
-                  >
+                      id="email-error"
+                      class="text-right text-sm text-strawberry font-medium hidden"
+                      >This field is requierd!</span
+                    >
                   </div>
-                  </label
-                >
+                </label>
                 <input
                   type="email"
                   id="email"
@@ -141,18 +148,16 @@
               </div>
 
               <div class="flex flex-col gap-y-2">
-                
-                
                 <label class="text-marineBlue text-sm" for="phone">
                   <div class="flex justify-between">
                     <span>Phone Number</span>
                     <span
-                  id="phone-error"
-                  class="text-right text-sm text-strawberry font-medium hidden"
-                  >This field is requierd!</span>
+                      id="phone-error"
+                      class="text-right text-sm text-strawberry font-medium hidden"
+                      >This field is requierd!</span
+                    >
                   </div>
-                  </label
-                >
+                </label>
                 <input
                   type="tel"
                   id="phone"
@@ -167,7 +172,7 @@
           <!-- step-2 start -->
 
           <div
-          id="forms"
+            id="forms"
             class="bg-white w-11/12 md:w-10/12 mx-auto p-4 rounded-lg flex flex-col gap-y-3 hidden"
           >
             <div class="flex flex-col mt-8 gap-y-3">
@@ -188,7 +193,7 @@
                 class="relative md:w-1/3 w-full md:h-[170px] h-24 py-3 rounded-md"
               >
                 <input
-                  class="absolute h-full w-full top-0 right-0 cursor-pointer z-10 checked:opacity-20 peer appearance-none"
+                  class="absolute h-full w-full top-0 right-0 cursor-pointer z-10 checked:opacity-20 peer appearance-none radio"
                   type="radio"
                   name="radio-plan"
                   id="arcane"
@@ -219,7 +224,7 @@
                 class="relative md:w-1/3 w-full md:h-[170px] h-24 py-3 rounded-md"
               >
                 <input
-                  class="absolute h-full w-full top-0 right-0 cursor-pointer z-10 checked:opacity-20 peer appearance-none"
+                  class="absolute h-full w-full top-0 right-0 cursor-pointer z-10 checked:opacity-20 peer appearance-none radio"
                   type="radio"
                   name="radio-plan"
                   id="advanded"
@@ -252,7 +257,7 @@
                 class="relative md:w-1/3 w-full md:h-[170px] h-24 py-3 rounded-md"
               >
                 <input
-                  class="absolute h-full w-full top-0 right-0 cursor-pointer z-10 checked:opacity-20 peer appearance-none"
+                  class="absolute h-full w-full top-0 right-0 cursor-pointer z-10 checked:opacity-20 peer appearance-none radio"
                   type="radio"
                   name="radio-plan"
                   id="pro"
@@ -301,7 +306,8 @@
 
           <!-- step-3 start -->
 
-          <div id="forms"
+          <div
+            id="forms"
             class="bg-white w-11/12 md:w-10/12 mx-auto p-4 rounded-lg flex flex-col gap-y-3 hidden"
           >
             <div class="flex flex-col mt-8 gap-y-3">
@@ -385,11 +391,56 @@
 
           <!-- step-3 ends -->
 
+          <!-- step-4 start -->
+
+          <div
+            id="forms"
+            class="bg-white w-11/12 md:w-10/12 mx-auto p-4 rounded-lg flex flex-col gap-y-3"
+          >
+            <div class="flex flex-col mt-8 gap-y-3">
+              <h2 class="font-bold text-marineBlue text-4xl">Finishing up</h2>
+              <span class="text-coolGray">
+                Double-check everything looks OK before confirming.
+              </span>
+            </div>
+
+            <div class="relative z-10 overflow-hidden p-3 rounded-md flex flex-col gap-y-2 before:content-[''] before:absolute before:w-full before:h-full before:top-0 before:right-0 before:bg-pastelBlue before:-z-10 before:opacity-20">
+              
+              <div class="flex justify-between items-center">
+                <div class="flex flex-col gap-y-1 items-start justify-between">
+                  <h4 class="font-medium text-marineBlue">Arcade (Monthly)</h4>
+                  <button class="underline text-coolGray">
+                    <a href="#">change</a>
+                  </button>
+                </div>
+                <span class="font-bold text-marineBlue">$90/yr</span>
+              </div>
+              <hr>
+              <div class="flex justify-between items-center">
+                <span class="text-coolGray">online services</span>
+                <span class="text-marineBlue">+$10/yr</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-coolGray">large storage</span>
+                <span class="text-marineBlue">+$20/yr</span>
+              </div>
+            </div>
+
+            <div class="flex justify-between items-center px-3 mt-4">
+            <span class="text-coolGray">total (per year)</span>
+            <span class="text-purplishBlue font-bold">$120/yr</span>
+            </div>
+           
+          </div>
+
+          <!-- step-4 ends -->
+
           <!-- next and previous buttons starts -->
           <div
             class="bg-white md:bg-transparent w-full h-20 flex flex-row-reverse justify-between items-center px-3"
           >
-            <button id="next-button"
+            <button
+              id="next-button"
               class="bg-marineBlue px-6 py-3 text-white rounded-md font-medium"
             >
               next step
