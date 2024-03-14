@@ -53,24 +53,21 @@ let thankBox = $.querySelector('.thank-box')
 nextStepBtn.addEventListener('click', (e) => {
 
     e.preventDefault()
-
+// hidden button box
     if (!(arrayForm[3].className.includes('hidden'))) {
         buttonBox.classList.add('hidden')
-        // arrayBtn[3].classList.add('active')
     }
 
     
 
     let requiredInputElems = document.getElementById('step-one-form').querySelectorAll("[required]")
-
+    // if phone number input have value go to next step
     requiredInputElems.forEach(input => {
         if (input.value) {
             input.parentElement.querySelector('#error-massege').classList.add('hidden')
 
             arrayForm[currentCount].classList.add('hidden')
             arrayBtn[currentCount].classList.remove('active')
-
-            console.log(currentCount);
 
             if (arrayForm[0].className.includes('hidden')) {
                 backBtn.classList.remove('hidden')
@@ -88,13 +85,15 @@ nextStepBtn.addEventListener('click', (e) => {
             }
 
             currentCount = count
-
+            // else show phone number error massege
         } else {
             input.parentElement.querySelector('#error-massege').classList.remove('hidden')
         }
 
-
+        // if user select his plan calculate user bill
         if (!(arrayForm[3].className.includes('hidden'))) {
+            nextStepBtn.innerHTML = 'confrim'
+            nextStepBtn.classList.add('bg-purplishBlue')
             let regex = /\d+/
             let userPlanePrice = regex.exec(planPrice.innerHTML)
 
@@ -117,6 +116,7 @@ nextStepBtn.addEventListener('click', (e) => {
 
 })
 
+// go back button logic
 backBtn.addEventListener('click', () => {
     arrayForm[currentCount].classList.add('hidden')
     arrayBtn[currentCount].classList.remove('active')
@@ -141,7 +141,7 @@ backBtn.addEventListener('click', () => {
 
 
 
-
+// in first loading hiden go back button
 window.addEventListener('load', () => {
     if (arrayForm[0].className.includes('hidden')) {
         backBtn.classList.remove('hidden')
@@ -155,6 +155,7 @@ window.addEventListener('load', () => {
 let activePlanClass = 'font-medium text-marineBlue';
 let oldPlanClass = 'font-medium text-coolGray'
 
+// if user select monthly or yearly plan change the prices
 toggleBtn.addEventListener('click', (e) => {
     if (e.target.checked) {
 
@@ -195,7 +196,7 @@ toggleBtn.addEventListener('click', (e) => {
 })
 
 
-
+// get all add-ons and import to summary step
 let allAddOns = allForms[2].querySelectorAll('input')
 
 let allAddOnsArray = Array.from(allAddOns)
@@ -233,8 +234,6 @@ arrayInputs.forEach(input => {
         let fullPlanMonthly = `${planName.innerHTML} (Monthly)`
         let fullPlanYearly = `${planName.innerHTML} (Yearly)`
 
-
-        // planNameElem.innerHTML = planName.innerHTML
 
         if (toggleBtn.checked) {
             planNameElem.innerHTML = fullPlanMonthly

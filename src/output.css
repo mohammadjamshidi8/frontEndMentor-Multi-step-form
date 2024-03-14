@@ -1997,6 +1997,11 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-purplishBlue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(71 61 255 / var(--tw-bg-opacity));
+}
+
 .bg-\[url\(\'\.\/assets\/images\/bg-sidebar-desktop\.svg\'\)\] {
   background-image: url('./assets/images/bg-sidebar-desktop.svg');
 }
@@ -2692,6 +2697,14 @@ video {
   transition-duration: 700ms;
 }
 
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.duration-200 {
+  transition-duration: 200ms;
+}
+
 .ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
@@ -2807,8 +2820,18 @@ video {
   opacity: 0.2;
 }
 
+.hover\:border-purplishBlue:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(71 61 255 / var(--tw-border-opacity));
+}
+
 .hover\:font-bold:hover {
   font-weight: 700;
+}
+
+.hover\:text-marineBlue:hover {
+  --tw-text-opacity: 1;
+  color: rgb(2 41 90 / var(--tw-text-opacity));
 }
 
 .before\:hover\:text-center:hover::before {
@@ -2858,6 +2881,11 @@ video {
 .peer:checked ~ .peer-checked\:bg-purple-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(250 245 255 / var(--tw-bg-opacity));
+}
+
+.peer:hover ~ .peer-hover\:border-purplishBlue {
+  --tw-border-opacity: 1;
+  border-color: rgb(71 61 255 / var(--tw-border-opacity));
 }
 
 @media (min-width: 640px) {
