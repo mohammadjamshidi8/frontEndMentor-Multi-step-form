@@ -94,7 +94,7 @@
 
         <!-- right content container start (forms) -->
         <div
-          class="bg-transparent md:w-2/3 h-screen md:h-[580px] mx-auto md:m-0 -mt-32 flex flex-col justify-between md:items-center"
+          class="bg-transparent w-full md:w-2/3 h-screen md:h-[580px] mx-auto md:m-0 -mt-32 flex flex-col justify-between md:items-center"
         >
           <!-- step-1 start -->
           <div
@@ -114,7 +114,7 @@
                   <div class="flex justify-between">
                     <span class="text-marineBlue text-sm">Name</span>
                     <span
-                      id="name-error"
+                      id="error-massege"
                       class="text-right text-sm text-strawberry font-medium hidden"
                       >This field is requierd!</span
                     >
@@ -152,19 +152,21 @@
                   <div class="flex justify-between">
                     <span>Phone Number</span>
                     <span
-                      id="phone-error"
+                      id="error-massege"
                       class="text-right text-sm text-strawberry font-medium hidden"
                       >This field is requierd!</span
                     >
                   </div>
                 </label>
                 <input
+                  required
                   type="tel"
                   id="phone"
                   placeholder="e.g. +1 234 567 890"
                   class="border-[1px] border-lightGray px-4 py-3 outline-none rounded-md focus:border-purplishBlue focus:transition focus:duration-300"
                 />
               </div>
+              <!-- <button id="test-btn" type="submit">next</button> -->
             </form>
           </div>
           <!-- step-1 ends -->
@@ -327,7 +329,10 @@
                   class="absolute w-full h-full top-0 right-0 rounded-md peer-checked:bg-purple-50 border-[1px] peer-checked:border-purplishBlue -z-10"
                 ></label>
                 <div class="flex flex-col gap-y-1">
-                  <h3 id="add-on-title" class="text-sm lg:text-lg text-marineBlue font-bold">
+                  <h3
+                    id="add-on-title"
+                    class="text-sm lg:text-lg text-marineBlue font-bold"
+                  >
                     Online service
                   </h3>
                   <span class="text-xs lg:text-base text-coolGray"
@@ -404,18 +409,22 @@
               </span>
             </div>
 
-            <div id="add-on-container" class="w-full relative z-10 overflow-hidden p-3 rounded-md flex flex-col gap-y-2 before:content-[''] before:absolute before:w-full before:h-full before:top-0 before:right-0 before:bg-pastelBlue before:-z-10 before:opacity-20">
-              
+            <div
+              id="add-on-container"
+              class="w-full relative z-10 overflow-hidden p-3 rounded-md flex flex-col gap-y-2 before:content-[''] before:absolute before:w-full before:h-full before:top-0 before:right-0 before:bg-pastelBlue before:-z-10 before:opacity-20"
+            >
               <div class="flex justify-between items-center">
                 <div class="flex flex-col gap-y-1 items-start justify-between">
-                  <h4 id="plan-name" class="font-medium text-marineBlue">Arcade <span id="plan-time"></span></h4>
+                  <h4 id="plan-name" class="font-medium text-marineBlue">
+                    Arcade <span id="plan-time"></span>
+                  </h4>
                   <button class="underline text-coolGray">
                     <a href="#">change</a>
                   </button>
                 </div>
-                <span id="plan-price" class="font-bold text-marineBlue">$90/yr</span>
+                <span id="plan-price" class="font-bold text-marineBlue"></span>
               </div>
-              <hr>
+              <hr />
               <!-- <div class="flex justify-between items-center">
                 <span class="text-coolGray">online services</span>
                 <span class="text-marineBlue">+$10/yr</span>
@@ -427,19 +436,42 @@
             </div>
 
             <div class="flex justify-between items-center px-3 mt-4">
-            <span class="text-coolGray">total (per year)</span>
-            <span class="text-purplishBlue font-bold">$120/yr</span>
+              <span class="text-coolGray">total (<span id="per"></span>)</span>
+              <span
+                id="user-summary"
+                class="text-purplishBlue font-bold"
+              ></span>
             </div>
-           
           </div>
 
           <!-- step-4 ends -->
 
-          <!-- next and previous buttons starts -->
+          <!-- step-5 start -->
+
           <div
+            id="forms"
+            class="bg-white w-11/12 mx-auto p-4 rounded-lg flex flex-col gap-y-3 hidden thank-box"
+          >
+            <div class="w-full flex flex-col items-center py-6 justify-center gap-y-5">
+              <img src="./assets/images/icon-thank-you.svg" alt="" />
+              <h3 class="text-marineBlue font-bold text-5xl">Thank you!</h3>
+              <span class="text-center text-coolGray">
+                Thanks for confirming your subscription! We hope you have fun
+                using our platform. If you ever need support, please feel free
+                to email us at support@loremgaming.com.
+              </span>
+            </div>
+          </div>
+
+          <!-- step-5 ends -->
+
+          <!-- next and previous buttons starts -->
+          <div id="button-box"
             class="bg-white md:bg-transparent w-full h-20 flex flex-row-reverse justify-between items-center px-3"
           >
             <button
+              type="button"
+              form="step-one-form"
               id="next-button"
               class="bg-marineBlue px-6 py-3 text-white rounded-md font-medium"
             >

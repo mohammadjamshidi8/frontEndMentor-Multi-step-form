@@ -1,78 +1,127 @@
-let toggleBtn = document.querySelector('#toggle')
+let $ = document;
 
-// let stepOneContainer = document.querySelector('#step-1')
+let toggleBtn = $.querySelector('#toggle')
+
+let nameInputElem = $.querySelector('#name')
+let emailInputElem = $.querySelector('#email')
+let phoneInputElem = $.querySelector('#phone')
+
+let monthlyText = $.querySelector('#monthly')
+let yearlyText = $.querySelector('#yearly')
+let planOffer = $.querySelectorAll('#free-offer')
+
+let arcadePrice = $.querySelector('#arcade-price')
+let advancedPrice = $.querySelector('#advanced-price')
+let proPrice = $.querySelector('#pro-price')
+
+let onlineAdd = $.querySelector('#online-add')
+let storageAdd = $.querySelector('#storage-add')
+let customAdd = $.querySelector('#custom-add')
+
+let allForms = $.querySelectorAll('#forms')
+let allStepBtns = $.querySelectorAll('#step-buttons')
+
+let stepOneInputs = $.querySelectorAll('#step-one-form input')
+
+let nextStepBtn = $.querySelector('#next-button')
+let backBtn = $.querySelector('#back-button')
+
+let perDuration = $.querySelector('#per')
 
 
-let monthlyText = document.querySelector('#monthly')
-let yearlyText = document.querySelector('#yearly')
-let planOffer = document.querySelectorAll('#free-offer')
+let planPrice = $.querySelector('#plan-price')
+let planNameElem = $.querySelector('#plan-name')
+let planTime = $.querySelector('#plan-time')
 
-let arcadePrice = document.querySelector('#arcade-price')
-let advancedPrice = document.querySelector('#advanced-price')
-let proPrice = document.querySelector('#pro-price')
+let addOnContainer = $.querySelector('#add-on-container')
+let userBasket = $.querySelector('#user-summary')
 
-let onlineAdd = document.querySelector('#online-add')
-let storageAdd = document.querySelector('#storage-add')
-let customAdd = document.querySelector('#custom-add')
-
-let allForms = document.querySelectorAll('#forms')
-let allStepBtns = document.querySelectorAll('#step-buttons')
-
-let stepOneInputs = document.querySelectorAll('#step-one-form input')
-
-let nextStepBtn = document.querySelector('#next-button')
-let backBtn = document.querySelector('#back-button')
-
-let arrayForm = Array.from(allForms)
-let arrayBtn = Array.from(allStepBtns)
-
-let planPrice = document.querySelector('#plan-price')
-let planNameElem = document.querySelector('#plan-name')
-let planTime = document.querySelector('#plan-time')
-
-let addOnContainer = document.querySelector('#add-on-container')
+let buttonBox = $.querySelector('#button-box')
 
 let count = 0
 
 let currentCount = 0
 
-console.log(allStepBtns);
+let sum = 0
 
-nextStepBtn.addEventListener('click', () => {
-    arrayForm[currentCount].classList.add('hidden')
-    arrayBtn[currentCount].classList.remove('active')
+let arrayForm = Array.from(allForms)
+let arrayBtn = Array.from(allStepBtns)
 
-    if (arrayForm[0].className.includes('hidden')) {
-        backBtn.classList.remove('hidden')
+let thankBox = $.querySelector('.thank-box')
+
+
+nextStepBtn.addEventListener('click', (e) => {
+
+    e.preventDefault()
+
+    if (!(arrayForm[3].className.includes('hidden'))) {
+        buttonBox.classList.add('hidden')
+        // arrayBtn[3].classList.add('active')
     }
 
-    // else {
-    //     backBtn.classList.add('hidden')
-    // }
+    
 
-    // console.log(count);
+    let requiredInputElems = document.getElementById('step-one-form').querySelectorAll("[required]")
 
-    // console.log(arrayForm.length - 1);
-    if (count < arrayForm.length - 1) {
-        count++
-        arrayForm[count].classList.remove('hidden')
-        arrayBtn[count].classList.add('active')
-        // console.log(count);
-    } else {
-        alert('finish')
-        
-    }
+    requiredInputElems.forEach(input => {
+        if (input.value) {
+            input.parentElement.querySelector('#error-massege').classList.add('hidden')
 
-    currentCount = count
-    console.log(count);
+            arrayForm[currentCount].classList.add('hidden')
+            arrayBtn[currentCount].classList.remove('active')
+
+            console.log(currentCount);
+
+            if (arrayForm[0].className.includes('hidden')) {
+                backBtn.classList.remove('hidden')
+            }
+
+            if (count < arrayForm.length - 1) {
+                count++
+                arrayForm[count].classList.remove('hidden')
+                arrayBtn[count].classList.add('active')
+
+                
+            } else {
+                alert('finish')
+
+            }
+
+            currentCount = count
+
+        } else {
+            input.parentElement.querySelector('#error-massege').classList.remove('hidden')
+        }
+
+
+        if (!(arrayForm[3].className.includes('hidden'))) {
+            let regex = /\d+/
+            let userPlanePrice = regex.exec(planPrice.innerHTML)
+
+            let userAddOns = $.querySelectorAll('#user-add-price')
+            userAddOns.forEach(add => {
+                let x = regex.exec(add.innerHTML)
+                sum = Number(x[0]) + sum
+            })
+
+
+            let totalSum = sum + Number(userPlanePrice[0])
+
+            userBasket.innerHTML = `$${totalSum}`
+
+        }
+
+
+    })
+
+
 })
 
 backBtn.addEventListener('click', () => {
     arrayForm[currentCount].classList.add('hidden')
     arrayBtn[currentCount].classList.remove('active')
 
-    
-    console.log(currentCount);
+
     if (currentCount <= 0) {
         alert('start')
         return false
@@ -81,7 +130,7 @@ backBtn.addEventListener('click', () => {
         arrayForm[currentCount].classList.remove('hidden')
         arrayBtn[currentCount].classList.add('active')
     }
-    
+
     if (arrayBtn[0].className.includes('active')) {
         backBtn.classList.add('hidden')
     }
@@ -92,25 +141,14 @@ backBtn.addEventListener('click', () => {
 
 
 
-console.log(count);
 
-window.addEventListener('load',() => {
+window.addEventListener('load', () => {
     if (arrayForm[0].className.includes('hidden')) {
-        console.log('step-1-pass');
         backBtn.classList.remove('hidden')
     } else {
         backBtn.classList.add('hidden')
     }
-})
 
-stepOneInputs.forEach(input => {
-    input.addEventListener('input', (e) => {
-        if (e.target.value.length) {
-            console.log('true');
-        } else {
-            console.log('false');
-        }
-    })
 })
 
 
@@ -168,9 +206,9 @@ allAddOnsArray.forEach(checkbox => {
             let selectAddPrice = e.target.parentElement.querySelector('.add-on-price').innerHTML;
             let selectAddName = e.target.parentElement.querySelector('h3').innerHTML
             addOnContainer.insertAdjacentHTML('beforeend', `
-            <div class="flex justify-between items-center">
-                <span class="text-coolGray">${selectAddName}</span>
-                <span class="text-marineBlue">${selectAddPrice}</span>
+            <div id="user-add-on" class="flex justify-between items-center">
+                <span id="add-temp-title" class="text-coolGray">${selectAddName}</span>
+                <span id="user-add-price" class="text-marineBlue">${selectAddPrice}</span>
               </div>
             `)
 
@@ -180,7 +218,6 @@ allAddOnsArray.forEach(checkbox => {
 
 // add selected add-on to summary page 
 let inputs = arrayForm[1].querySelectorAll('input.radio')
-console.log(inputs);
 let arrayInputs = Array.from(inputs)
 
 let selectedPlanPrice = null
@@ -201,8 +238,11 @@ arrayInputs.forEach(input => {
 
         if (toggleBtn.checked) {
             planNameElem.innerHTML = fullPlanMonthly
+            perDuration.innerHTML = 'per month'
+
         } else {
             planNameElem.innerHTML = fullPlanYearly
+            perDuration.innerHTML = 'per year'
         }
     })
 })
