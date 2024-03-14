@@ -26,6 +26,12 @@ let backBtn = document.querySelector('#back-button')
 let arrayForm = Array.from(allForms)
 let arrayBtn = Array.from(allStepBtns)
 
+let planPrice = document.querySelector('#plan-price')
+let planNameElem = document.querySelector('#plan-name')
+let planTime = document.querySelector('#plan-time')
+
+let addOnContainer = document.querySelector('#add-on-container')
+
 let count = 0
 
 let currentCount = 0
@@ -152,16 +158,51 @@ toggleBtn.addEventListener('click', (e) => {
 
 
 
+let allAddOns = allForms[2].querySelectorAll('input')
 
+let allAddOnsArray = Array.from(allAddOns)
+
+allAddOnsArray.forEach(checkbox => {
+    checkbox.addEventListener('input', (e) => {
+        if (e.target.checked) {
+            let selectAddPrice = e.target.parentElement.querySelector('.add-on-price').innerHTML;
+            let selectAddName = e.target.parentElement.querySelector('h3').innerHTML
+            addOnContainer.insertAdjacentHTML('beforeend', `
+            <div class="flex justify-between items-center">
+                <span class="text-coolGray">${selectAddName}</span>
+                <span class="text-marineBlue">${selectAddPrice}</span>
+              </div>
+            `)
+
+        }
+    })
+})
+
+// add selected add-on to summary page 
 let inputs = arrayForm[1].querySelectorAll('input.radio')
 console.log(inputs);
 let arrayInputs = Array.from(inputs)
 
-let test = null
+let selectedPlanPrice = null
 
 arrayInputs.forEach(input => {
     input.addEventListener('input', (e) => {
-        test = e.target.parentElement.querySelector('span')
-        console.log(test.innerHTML);
+        selectedPlanPrice = e.target.parentElement.querySelector('span')
+
+        let planName = e.target.parentElement.querySelector('h2')
+
+        planPrice.innerHTML = selectedPlanPrice.innerHTML
+
+        let fullPlanMonthly = `${planName.innerHTML} (Monthly)`
+        let fullPlanYearly = `${planName.innerHTML} (Yearly)`
+
+
+        // planNameElem.innerHTML = planName.innerHTML
+
+        if (toggleBtn.checked) {
+            planNameElem.innerHTML = fullPlanMonthly
+        } else {
+            planNameElem.innerHTML = fullPlanYearly
+        }
     })
 })
